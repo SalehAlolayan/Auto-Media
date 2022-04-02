@@ -1,0 +1,3 @@
+<NAS-IP>:/path/to/TV-Series 		      /mnt/data/media/tv   	       nfs     defaults        0 0
+<NAS-IP>:/path/to/Movies  				    /mnt/data/media/movies       nfs     defaults        0 0
+<NAS-IP>:/path/toauto-media 	        /mnt/data/downloading        nfs     defaults        0 0
