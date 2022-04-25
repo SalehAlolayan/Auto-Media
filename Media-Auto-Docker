@@ -1,4 +1,5 @@
 ---
+###     DONT RUN AS ROOT    ###
 version: "2.1"
 networks:
   br-auto-media:
