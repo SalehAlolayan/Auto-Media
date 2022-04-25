@@ -1,20 +1,19 @@
-mkdir -p /mnt/data/app-conf/qbittorrent
-mkdir -p /mnt/data/app-conf/nzbget
-mkdir -p /mnt/data/app-conf/prowlarr
-mkdir -p /mnt/data/app-conf/nzbhydra2
-mkdir -p /mnt/data/app-conf/radarr
-mkdir -p /mnt/data/app-conf/jackett
-mkdir -p /mnt/data/app-conf/sonarr
-mkdir -p /mnt/data/app-conf/bazarr
-mkdir -p /mnt/data/app-conf/emby
-mkdir -p /mnt/data/app-conf/ombi
+mkdir -p /mnt/data/app-conf/qbittorrent/config
+mkdir -p /mnt/data/app-conf/nzbget/config
+mkdir -p /mnt/data/app-conf/prowlarr/config
+mkdir -p /mnt/data/app-conf/radarr/config
+mkdir -p /mnt/data/app-conf/sonarr/config
+mkdir -p /mnt/data/app-conf/bazarr/config
+mkdir -p /mnt/data/app-conf/emby/config
+mkdir -p /mnt/data/app-conf/ombi/config
 
 mkdir -p /mnt/data/downloading/torrent
-mkdir -p /mnt/data/downloading/torrent/temp
 mkdir -p /mnt/data/downloading/blackhole
-mkdir -p /mnt/data/downloading/usenet
-mkdir -p /mnt/data/downloading/usenet/temp
+mkdir -p /mnt/data/downloading/usenet/Sonarr
+mkdir -p /mnt/data/downloading/usenet/Radarr
+
 
 mkdir -p /mnt/data/media/tv
 mkdir -p /mnt/data/media/movies
 mkdir -p /mnt/data/media/
+
