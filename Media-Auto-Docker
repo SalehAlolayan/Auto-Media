@@ -22,7 +22,7 @@ services:
       - TZ=Asia/Riyadh
       - WEBUI_PORT=8080
     volumes:
-      - /mnt/data/app-conf/qbittorrent:/config
+      - /mnt/data/app-conf/qbittorrent/config:/config
       - /mnt/data/downloading/torrent:/data/downloading/torrent
       - /mnt/data/downloading/torrent/temp:/data/downloading/torrent/temp
       - /mnt/data/downloading/blackhole:/data/downloading/blackhole
@@ -42,12 +42,9 @@ services:
       - PGID=1110
       - UMASK=002
       - TZ=Asia/Riyadh
-      - NZBGET_USER=nzbget #optional
-      - NZBGET_PASS=tegbzn6789 #optional
     volumes:
-      - /mnt/data/app-conf/nzbget:/config
+      - /mnt/data/app-conf/nzbget/config:/config
       - /mnt/data/downloading/usenet:/data/downloading/usenet
-      - /mnt/data/downloading/usenet/temp:/data/downloading/usenet/temp
     ports:
       - 6789:6789
     restart: unless-stopped
@@ -63,14 +60,14 @@ services:
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/prowlarr:/config
+      - /mnt/data/app-conf/prowlarr/config:/config
     ports:
       - 9696:9696
     restart: unless-stopped
-  
-  nzbhydra2:
-    image: lscr.io/linuxserver/nzbhydra2
-    container_name: nzbhydra2
+
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
     networks: 
       - br-auto-media
     environment:
@@ -79,43 +76,7 @@ services:
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/nzbhydra2:/config
-      - /mnt/data/downloading/usenet:/data/downloading/usenet
-    ports:
-      - 5076:5076
-    restart: unless-stopped
-  
-  jackett:
-    image: lscr.io/linuxserver/jackett
-    container_name: jackett
-    networks: 
-      - br-auto-media
-    environment:
-      - PUID=1105
-      - PGID=1110
-      - UMASK=002
-      - TZ=Asia/Riyadh
-      - AUTO_UPDATE=true
-    volumes:
-      - /mnt/data/app-conf/jackett:/config
-      - /mnt/data/downloading/blackhole:/data/downloading/blackhole
-    ports:
-      - 9117:9117
-    restart: unless-stopped
-
-
-  radarr:
-    image: lscr.io/linuxserver/radarr
-    container_name: radarr
-    networks: 
-      - br-auto-media
-    environment:
-      - PUID=1106
-      - PGID=1110
-      - UMASK=002
-      - TZ=Asia/Riyadh
-    volumes:
-      - /mnt/data/app-conf/radarr:/config
+      - /mnt/data/app-conf/radarr/config:/config
       - /mnt/data/media/movies:/data/media/movies 
       - /mnt/data/downloading/usenet:/data/downloading/usenet
       - /mnt/data/downloading/torrent:/data/downloading/torrent
@@ -129,12 +90,12 @@ services:
     networks: 
       - br-auto-media
     environment:
-      - PUID=1107
+      - PUID=1105
       - PGID=1110
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/sonarr:/config
+      - /mnt/data/app-conf/sonarr/config:/config
       - /mnt/data/media/tv:/data/media/tv 
       - /mnt/data/downloading/usenet:/data/downloading/usenet
       - /mnt/data/downloading/torrent:/data/downloading/torrent
@@ -148,12 +109,12 @@ services:
     networks: 
       - br-auto-media
     environment:
-      - PUID=1108
+      - PUID=1106
       - PGID=1110
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/bazarr:/config
+      - /mnt/data/app-conf/bazarr/config:/config
       - /mnt/data/media/tv:/data/media/tv 
       - /mnt/data/media/movies:/data/media/movies
     ports:
@@ -166,12 +127,12 @@ services:
     networks: 
       - br-auto-media
     environment:
-      - PUID=1109
+      - PUID=1107
       - PGID=1110
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/emby:/config
+      - /mnt/data/app-conf/emby/config:/config
       - /mnt/data/media/tv:/data/media/tv 
       - /mnt/data/media/movies:/data/media/movies
       - /opt/vc/lib:/opt/vc/lib #optional
@@ -186,12 +147,12 @@ services:
     networks: 
       - br-auto-media
     environment:
-      - PUID=1110
+      - PUID=1108
       - PGID=1110
       - UMASK=002
       - TZ=Asia/Riyadh
     volumes:
-      - /mnt/data/app-conf/ombi:/config
+      - /mnt/data/app-conf/ombi/config:/config
     ports:
       - 3579:3579
     restart: unless-stopped
