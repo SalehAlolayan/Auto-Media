@@ -3,11 +3,6 @@ Auto Media downloading
 
 If you have any suggustion feel free to make a pull request of open an issue
 
-for auto update use the below line in a cron job:
-
-
-/usr/bin/docker-compose -f auto-media.yml down && /usr/bin/docker-compose -f auto-media.yml pull && /usr/bin/docker-compose -f auto-media.yml up -d  --remove-orphans && /usr/bin/docker image prune -f > /dev/null
-
 ========================================================
  
 Disclaimer: I shall not be held responsible, 
