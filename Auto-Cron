@@ -1,0 +1,4 @@
+# use Root Cron
+*/1 * * * /bin/chmod 775 -R /mnt/data/downloading/usenet/completed/Sonarr/* && /bin/chmod 775 -R /mnt/data/downloading/torrent/* && /bin/chown -R m-spr-root:auto-media /mnt/data/downloading/usenet/completed/Sonarr/* && /bin/chown -R m-spr-root:auto-media /mnt/data/downloading/torrent/*
+# use the user you run the containers on
+/usr/bin/docker-compose -f auto-media.yml down && /usr/bin/docker-compose -f auto-media.yml pull && /usr/bin/docker-compose -f auto-media.yml up -d --remove-orphans && /usr/bin/docker image prune -f > /dev/null
